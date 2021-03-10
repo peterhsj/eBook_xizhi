@@ -20,7 +20,13 @@ html, body {
   display: block;
   width: calc(100% - 350px);
 }
+
 .eBook__header {
+  display: block;
+  height: 138px;
+  width: 100%;
+}
+.eBook_subTitle {
   background-color: #DCEDFF;
   display: block;
   height: 105px;
@@ -31,7 +37,12 @@ html, body {
   flex-flow: row;
   list-style: none;
   position: relative;
-  
+  top: -30px;
+}
+.eBook__content {
+  border: 1px solid #dbdbdb;
+  height: calc(100% - 138px);
+  width: 100%;
 }
 
 .eBook__mainMenu li {
@@ -40,6 +51,7 @@ html, body {
 }
 
 .eBook__mainMenu li a {
+  background-color: #FFFFFF;
   border-radius: 0.375rem;
   border: 1px solid #999999;
   cursor: pointer;
