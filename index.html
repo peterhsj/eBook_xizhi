@@ -6,56 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="index.css"></link>
-  <style>
-    
-  </style>
 </head>
 <body>
   <div id="app">
-    <ul class="mainMenu">
-      <li
-        v-for="(mainItem, index) in menuList"
-        :key="`main_${index}`"
-      >
-        <a
-          :class="{'actived': currentMainItem === `main_${index}`}"
-          @click="changeMainMenu(mainItem.subList, `main_${index}`)"
-        >{{ mainItem.name }}</a>
-      </li>
-    </ul>
-    <div class="subMenu">
-      <ul>
-        <li
-          v-for="(subItem, idx) in subList"
-          :key="`sub_${idx}`"
-        >
-          <a
-            v-if="subItem.url"
-            :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
-            @click="changeSubItem(subItem.url, `${currentMainItem}_sub_${idx}`)"
-          >{{subItem.name}}</a>
-          <a
-            v-else
-            :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
-            @click="openThirdMenu(`${currentMainItem}_menu_${idx}`, `${currentMainItem}_sub_${idx}`)"
-          >{{subItem.name}}</a>
-          <ul
-            v-if="subItem.subList"
-            class="thirdMenu"
-            :class="{'collapsed': currentThirdMenu === `${currentMainItem}_menu_${idx}`}"
+    <div class="eBook__sider">
+
+      <div class="eBook__subMenu">
+        <ul>
+          <li
+            v-for="(subItem, idx) in subList"
+            :key="`sub_${idx}`"
           >
-            <li
-              v-for="(thirdItem, index) in subItem.subList"
-              :key="`third_${index}`"
+            <a
+              v-if="subItem.url"
+              :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
+              @click="changeSubItem(subItem.url, `${currentMainItem}_sub_${idx}`)"
+            >{{subItem.name}}</a>
+            <a
+              v-else
+              :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
+              @click="openThirdMenu(`${currentMainItem}_menu_${idx}`, `${currentMainItem}_sub_${idx}`)"
+            >{{subItem.name}}</a>
+            <ul
+              v-if="subItem.subList"
+              class="eBook__thirdMenu"
+              :class="{'collapsed': currentThirdMenu === `${currentMainItem}_menu_${idx}`}"
             >
-              <a           
-                :class="{'actived': currentThirdItem === `${currentSubItem}_third_${index}`}"
-                @click="changeThirdItem(thirdItem.url, `${currentSubItem}_third_${index}`)"
-              >{{thirdItem.name}}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+              <li
+                v-for="(thirdItem, index) in subItem.subList"
+                :key="`third_${index}`"
+              >
+                <a           
+                  :class="{'actived': currentThirdItem === `${currentSubItem}_third_${index}`}"
+                  @click="changeThirdItem(thirdItem.url, `${currentSubItem}_third_${index}`)"
+                >{{thirdItem.name}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="eBook__wrapper">
+      <div class="eBook__header">
+
+        <ul class="eBook__mainMenu">
+          <li
+            v-for="(mainItem, index) in menuList"
+            :key="`main_${index}`"
+          >
+            <a
+              :class="{'actived': currentMainItem === `main_${index}`}"
+              @click="changeMainMenu(mainItem.subList, `main_${index}`)"
+            >{{ mainItem.name }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="eBook__content">
+
+      </div>
     </div>
   </div>
 </body>
