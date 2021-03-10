@@ -5,85 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="index.css"></link>
   <style>
-    * {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    .mainMenu {
-      display: flex;
-      flex-flow: row;
-      list-style: none;
-    }
-    .mainMenu li {
-      margin: 0;
-      padding: 0;
-    }
-    .mainMenu li a {
-      border-radius: 0.375rem;
-      border: 1px solid #999999;
-      cursor: pointer;
-      margin-right: 10px;
-      padding: 10px 15px;
-    }
-    .mainMenu li a:hover {
-      background-color: #CCCCCC;
-    }
-    .mainMenu li a.actived {
-      background-color: #CCCCCC;
-    }
-    .mainMenu li a.actived:hover {
-      background-color: #CCCCCC;
-    }
-    .subMenu > ul{
-      display: flex;
-      flex-flow: column;
-      list-style: none;
-    }
-    .subMenu li {
-      padding: 5px;
-      width: 200px;
-    }
-    .subMenu li a {
-      border: 1px solid #999999;
-      cursor: pointer;
-      display: block;
-      padding: 10px 15px;
-    }
-    .subMenu li a:hover {
-      background-color: #CCCCCC;
-    }
-    .subMenu li a.actived {
-      background-color: #CCCCCC;
-    }
-    .subMenu li a.actived:hover {
-      background-color: #CCCCCC;
-    }
-    .thirdMenu{
-      display: flex;
-      flex-flow: column;
-      list-style: none;
-      padding-left: 10px;
-      padding-right: 5px;
-      display: none;
-    }
-    .thirdMenu.collapsed {
-      display: block;
-    }
-    .thirdMenu li {      
-      padding: 5px;
-      width: 100%;
-    }
-    .thirdMenu li a {
-      border: 1px solid #999999;
-      cursor: pointer;
-      display: block;
-      padding: 10px 15px;
-    }
-    .thirdMenu li a:hover {
-      background-color: #CCCCCC;
-    }
+    
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 </head>
 <body>
   <div id="app">
@@ -134,42 +59,7 @@
     </div>
   </div>
 </body>
-<script type="module">
-  import Data from "./eBookList.js";
-  var app = new Vue({
-    el: "#app",
-    data() {
-      return {
-        menuList: Data.menuList(),
-        subList: {},
-        currentMainItem: '',
-        currentSubItem: '',
-        currentThirdMenu: '',
-        currentThirdItem: '',
-      }
-    },
-    methods: {
-      changeMainMenu(obj, idx) {
-        this.subList = obj;
-        this.currentMainItem = idx;
-      },
-      changeSubItem(url, idx) {
-        this.currentThirdMenu = '';
-        this.currentSubItem = idx;
-        console.log(url);
-      },
-      openThirdMenu(menu, idx) {
-        this.currentThirdMenu = menu;
-        this.currentSubItem = idx;
-      },
-      changeThirdItem(url, idx) {
-        this.currentThirdItem = idx;
-        console.log(url);
-      },
-    },
-    mounted() {
-      
-    },
-  })
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script src="js/eBookList.js"></script>
+<script src="js/app.js"></script>
 </html>
