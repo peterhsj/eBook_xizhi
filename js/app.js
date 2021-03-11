@@ -8,6 +8,7 @@ var app = new Vue({
       currentSubItem: '',
       currentThirdMenu: '',
       currentThirdItem: '',
+      pageUrl: '',
     }
   },
   methods: {
@@ -18,7 +19,8 @@ var app = new Vue({
     changeSubItem(url, idx) {
       this.currentThirdMenu = '';
       this.currentSubItem = idx;
-      console.log(url);
+      // console.log(url);
+      this.pageUrl = `files/${url}`;
     },
     openThirdMenu(menu, idx) {
       this.currentThirdMenu = menu;
@@ -26,7 +28,8 @@ var app = new Vue({
     },
     changeThirdItem(url, idx) {
       this.currentThirdItem = idx;
-      console.log(url);
+      // console.log(url);
+      this.pageUrl = `files/${url}`;
     },
   },
   mounted() {      

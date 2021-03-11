@@ -9,47 +9,56 @@
 </head>
 <body>
   <div id="app">
-    <div class="eBook__sider">
-
+    <div class="eBook__sideBar">
+      <div class="eBook__logo">
+        <img src="images/logo.jpg">
+        <div class="eBook__empty"></div>
+      </div>
       <div class="eBook__subMenu">
-        <ul>
-          <li
-            v-for="(subItem, idx) in subList"
-            :key="`sub_${idx}`"
-          >
-            <a
-              v-if="subItem.url"
-              :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
-              @click="changeSubItem(subItem.url, `${currentMainItem}_sub_${idx}`)"
-            >{{subItem.name}}</a>
-            <a
-              v-else
-              :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
-              @click="openThirdMenu(`${currentMainItem}_menu_${idx}`, `${currentMainItem}_sub_${idx}`)"
-            >{{subItem.name}}</a>
-            <ul
-              v-if="subItem.subList"
-              class="eBook__thirdMenu"
-              :class="{'collapsed': currentThirdMenu === `${currentMainItem}_menu_${idx}`}"
+        <div>
+          <ul>
+            <li
+              v-for="(subItem, idx) in subList"
+              :key="`sub_${idx}`"
             >
-              <li
-                v-for="(thirdItem, index) in subItem.subList"
-                :key="`third_${index}`"
+              <a
+                v-if="subItem.url"
+                :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
+                @click="changeSubItem(subItem.url, `${currentMainItem}_sub_${idx}`)"
+              >{{subItem.name}}</a>
+              <a
+                v-else
+                :class="{'actived': currentSubItem === `${currentMainItem}_sub_${idx}`}"
+                @click="openThirdMenu(`${currentMainItem}_menu_${idx}`, `${currentMainItem}_sub_${idx}`)"
+              >{{subItem.name}}</a>
+              <ul
+                v-if="subItem.subList"
+                class="eBook__thirdMenu"
+                :class="{'collapsed': currentThirdMenu === `${currentMainItem}_menu_${idx}`}"
               >
-                <a           
-                  :class="{'actived': currentThirdItem === `${currentSubItem}_third_${index}`}"
-                  @click="changeThirdItem(thirdItem.url, `${currentSubItem}_third_${index}`)"
-                >{{thirdItem.name}}</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+                <li
+                  v-for="(thirdItem, index) in subItem.subList"
+                  :key="`third_${index}`"
+                >
+                  <a           
+                    :class="{'actived': currentThirdItem === `${currentSubItem}_third_${index}`}"
+                    @click="changeThirdItem(thirdItem.url, `${currentSubItem}_third_${index}`)"
+                  >{{thirdItem.name}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="eBook__wrapper">
       <div class="eBook__header">
         <div class="eBook_subTitle">
-
+          <h2>
+            <span>110年度服務品質類考核</span>
+            服務汐萬金 方便擱貼心
+          </h2>
+          <img src="images/heart.png" height="56" width="65">
         </div>
         <ul class="eBook__mainMenu">
           <li
@@ -64,7 +73,7 @@
         </ul>
       </div>
       <div class="eBook__content">
-
+        <iframe name="content" :src="pageUrl" width="100%"></iframe>
       </div>
     </div>
   </div>

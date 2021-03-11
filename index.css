@@ -1,131 +1,202 @@
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial,
+    Helvetica,
+    sans-serif,
+    Arial,
+    "微軟正黑體",
+    "新細明體";
   box-sizing: border-box;
 }
-
 html, body {
   height: 100%;
   margin: 0;
+  overflow: hidden;
 }
 #app {
   display: flex;
   height: 100%;
   width: 100%;
 }
-.eBook__sider {
+.eBook__sideBar {
   display: block;
-  width: 350px;
+  width: 320px;
+  height: 100%;
 }
+  .eBook__logo {
+    display: flex;
+    flex-flow: row;
+    height: 240px;
+    width: 320px;
+  }
+    .eBook__empty {
+      background-color: #DCEDFF;
+      border-bottom: 1px solid #bfbfbf;
+      display: block;
+      height: 100px;
+      width: 20px;
+    }
+  .eBook__subMenu {
+    background: url("images/side_bg.gif") repeat-y;
+    display: block;
+    height: calc(100vh - 240px);
+    overflow: hidden;
+    overflow-y: auto;
+    width: 320px;
+  }
+  .eBook__subMenu > div {
+    display: block;
+    height: 100%;
+    width: 300px;
+  }
+  .eBook__subMenu > div > ul {
+    display: flex;
+    flex-flow: column;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 10px;
+    position: relative;
+    right: -15px;
+  }
+  .eBook__subMenu li {
+    padding: 5px;
+    width: 100%;
+  }
+  .eBook__subMenu li a {
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 10px 15px;
+  }
+  .eBook__subMenu li a:hover {
+    background-color: #007130;
+  }
+  .eBook__subMenu li a.actived {
+    background-color: #007130;
+  }
+  .eBook__subMenu li a.actived:hover {
+    background-color: #007130;
+  }
+  .eBook__thirdMenu {
+    background-color: #007130;
+    display: flex;
+    flex-flow: column;
+    height: 0;
+    list-style: none;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    display: none;
+  }
+  .eBook__thirdMenu.collapsed {
+    display: block;
+    height: auto;
+    transition-property: height;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+  }
+  .eBook__thirdMenu li {
+    padding: 5px;
+    width: 100%;
+  }
+  .eBook__thirdMenu li a {
+    cursor: pointer;
+    display: block;
+    padding: 10px 20px 10px 15px;
+  }
+  .eBook__thirdMenu li a:hover {
+    color: #333333;
+    background-color: #FFFFFF;
+  }
+  .eBook__thirdMenu li a.actived {
+    color: #333333;
+    background-color: #FFFFFF;
+  }
+  .eBook__thirdMenu li a.actived:hover {
+    color: #333333;
+    background-color: #FFFFFF;
+  }
 .eBook__wrapper {
   display: block;
-  width: calc(100% - 350px);
+  width: calc(100% - 320px);
 }
-
 .eBook__header {
   display: block;
   height: 138px;
   width: 100%;
 }
-.eBook_subTitle {
-  background-color: #DCEDFF;
-  display: block;
-  height: 105px;
-  width: 100%;
-}
-.eBook__mainMenu {
-  display: flex;
-  flex-flow: row;
-  list-style: none;
-  position: relative;
-  top: -30px;
-}
-.eBook__content {
-  border: 1px solid #dbdbdb;
-  height: calc(100% - 138px);
-  width: 100%;
-}
-
-.eBook__mainMenu li {
-  margin: 0;
-  padding: 0;
-}
-
-.eBook__mainMenu li a {
-  background-color: #FFFFFF;
-  border-radius: 0.375rem;
-  border: 1px solid #999999;
-  cursor: pointer;
-  margin-right: 10px;
-  padding: 10px 15px;
-}
-
-.eBook__mainMenu li a:hover {
-  background-color: #CCCCCC;
-}
-
-.eBook__mainMenu li a.actived {
-  background-color: #CCCCCC;
-}
-
-.eBook__mainMenu li a.actived:hover {
-  background-color: #CCCCCC;
-}
-
-.eBook__subMenu>ul {
-  display: flex;
-  flex-flow: column;
-  list-style: none;
-}
-
-.subMenu li {
-  padding: 5px;
-  width: 200px;
-}
-
-.eBook__subMenu li a {
-  border: 1px solid #999999;
-  cursor: pointer;
-  display: block;
-  padding: 10px 15px;
-}
-
-.eBook__subMenu li a:hover {
-  background-color: #CCCCCC;
-}
-
-.eBook__subMenu li a.actived {
-  background-color: #CCCCCC;
-}
-
-.eBook__subMenu li a.actived:hover {
-  background-color: #CCCCCC;
-}
-
-.eBook__thirdMenu {
-  display: flex;
-  flex-flow: column;
-  list-style: none;
-  padding-left: 10px;
-  padding-right: 5px;
-  display: none;
-}
-
-.eBook__thirdMenu.collapsed {
-  display: block;
-}
-
-.eBook__thirdMenu li {
-  padding: 5px;
-  width: 100%;
-}
-
-.eBook__thirdMenu li a {
-  border: 1px solid #999999;
-  cursor: pointer;
-  display: block;
-  padding: 10px 15px;
-}
-
-.eBook__thirdMenu li a:hover {
-  background-color: #CCCCCC;
-}
+  .eBook_subTitle {
+    background-color: #DCEDFF;
+    border-bottom: 1px solid #bfbfbf;
+    display: flex;
+    height: 100px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .eBook_subTitle img {
+    position: relative;
+    right: 10px;
+    top:5px;
+    width: 56px;
+  }
+  .eBook_subTitle h2 {
+    color: #ac6a00;
+    font-size: 1.4rem;
+    font-weight: 900;
+    padding-right: 15px;
+  }
+  .eBook_subTitle h2 span {
+    color: #00539f;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+  .eBook__mainMenu {
+    display: flex;
+    flex-flow: row;
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
+    position: relative;
+    top: -30px;
+  }
+    .eBook__mainMenu li {
+      display: block;
+      margin: 0;
+      margin-right: 15px;
+      max-width: 140px;
+      padding: 0;
+    }
+    .eBook__mainMenu li a {
+      align-items: center;
+      background-color: #FFFFFF;
+      border-radius: 0.375rem;
+      border: 1px solid #999999;
+      cursor: pointer;
+      display: flex;
+      font-size: 1.025rem;
+      font-weight: 700;
+      height: 100%;
+      padding: 6px 15px;
+      text-align: center;
+      width: 100%;
+    }
+    .eBook__mainMenu li a:hover {
+      background-color: #cfa972;
+    }
+    .eBook__mainMenu li a.actived {
+      background-color: #cfa972;
+    }
+    .eBook__mainMenu li a.actived:hover {
+      background-color: #cfa972;
+    }
+  .eBook__content {
+    height: calc(100% - 138px);
+    padding: 10px 15px 15px 15px;
+    width: 100%;
+  }
+    iframe {
+      border: 1px solid #dbdbdb;
+      height: 100%;
+    }
