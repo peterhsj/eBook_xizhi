@@ -67,7 +67,7 @@
           >
             <a
               :class="{'actived': currentMainItem === `main_${index}`}"
-              @click="changeMainMenu(mainItem.subList, `main_${index}`)"
+              @click="mainMenuHandlar(mainItem.subList, mainItem.url, `main_${index}`,)"
             >{{ mainItem.name }}</a>
           </li>
         </ul>

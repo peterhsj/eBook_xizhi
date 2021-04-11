@@ -4,19 +4,19 @@ const menuList = [
     subList: [
       {
         name: "服務人員專業度",
-        url: "subItem1_1.html"
+        url: "files/eBook_1_1.pdf",
       },
       {
         name: "服務設施合宜程度",
-        url: "subItem1_2.html"
+        url: "files/eBook_1_2.pdf",
       },
       {
         name: "網站使用便利性",
-        url: "subItem1_3.html"
+        url: "files/eBook_1_3.pdf",
       },
       {
         name: "服務資訊透明度",
-        url: "subItem1_4.html"
+        url: "files/eBook_1_4.pdf",
       },
     ]
   },
@@ -25,45 +25,23 @@ const menuList = [
     subList: [
       {
         name: "建置單一窗口整合服務",
-        subList: [
-          {
-            name: "subItem2_1_1",
-            url: "subItem2_1_1.html"
-          },
-          {
-            name: "subItem2_1_2",
-            url: "subItem2_1_2.html"
-          },
-        ]
+        url: "files/eBook_2_1.pdf",
       },
       {
         name: "減除申辦案件需檢附之書表謄本",
-        url: "subItem2_2.html"
+        url: "files/eBook_2_2.pdf",
       },
       {
         name: "開發線上申辦或跨平台通用服務",
-        subList: [
-          {
-            name: "subItem2_3_1",
-            url: "subItem2_3_1.html"
-          },
-          {
-            name: "subItem2_3_2",
-            url: "subItem2_3_2.html"
-          },
-          {
-            name: "subItem2_3_2",
-            url: "subItem2_3_2.html"
-          },
-        ]
+        url: "files/eBook_2_3.pdf",
       },
       {
         name: "突破成長",
-        url: "subItem2_2.html"
+        url: "files/eBook_2_4.pdf",
       },
       {
         name: "歷年服務再精進",
-        url: "subItem2_2.html"
+        url: "files/eBook_2_5.pdf",
       },
     ]
   },
@@ -72,51 +50,76 @@ const menuList = [
     subList: [
       {
         name: "內部簡化作業",
-        url: "subItem3_1.html"
+        url: "files/eBook_3_1.pdf",
       },
       {
         name: "服務精進機制",
-        url: "subItem3_2.html"
+        subList: [
+          {
+            name: "內部服務精進機制及運作",
+            url: "files/eBook_3_2_1.pdf",
+          },
+          {
+            name: "創新服務提案管道與獎勵制度",
+            url: "files/eBook_3_2_2.pdf",
+          },
+          {
+            name: "創新服務提案情形、採行率",
+            url: "files/eBook_3_2_3.pdf",
+          },
+          {
+            name: "擴散應用",
+            url: "files/eBook_3_2_4.pdf",
+          },
+        ],
       },
-    ]
+    ],
   },
   {
     name: "服務評價",
     subList: [
       {
         name: "服務滿意情形",
-        url: "subItem3_1.html"
+        subList: [
+          {
+            name: "服務滿意情形 - 滿意度調查",
+            url: "files/eBook_4_1_1.pdf",
+          },
+          {
+            name: "服務滿意情形 - 其他機制",
+            url: "files/eBook_4_1_2.pdf",
+          }
+        ],
       },
-    ]
+    ],
   },
   {
     name: "開放創新",
     subList: [
       {
         name: "開放參與",
-        url: "subItem3_1.html"
+        url: "files/eBook_5_1.pdf",
       },
       {
         name: "創新性",
-        url: "subItem3_2.html"
+        url: "files/eBook_5_2.pdf",
       },
     ]
   },
   {
     name: "第一線為民服務情形",
-    url: "subItem3_2.html"
+    url: "files/eBook_6_1.pdf",
   },
   {
     name: "地政業務行銷宣導有效程度",
-    url: "subItem3_2.html"
+    url: "files/eBook_7_1.pdf"
   },
   {
     name: "電話禮貌測試",
-    url: "subItem3_2.html"
+    url: "files/eBook_8_1.pdf",
   },
   {
     name: "綜合業務",
-    url: "subItem3_2.html"
+    url: "files/eBook_9_1.pdf",
   },
-
 ]

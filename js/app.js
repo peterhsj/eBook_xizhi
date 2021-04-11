@@ -8,19 +8,26 @@ var app = new Vue({
       currentSubItem: '',
       currentThirdMenu: '',
       currentThirdItem: '',
-      pageUrl: '',
+      pageUrl: 'files/index.pdf',
     }
   },
   methods: {
-    changeMainMenu(obj, idx) {
-      this.subList = obj;
+    mainMenuHandlar(obj, url, idx) {
+      if(url) {
+        this.subList = {};
+        this.pageUrl = `${url}`;
+      } else {
+        this.subList = obj;
+      }
       this.currentMainItem = idx;
+      this.currentSubItem = '';
+      this.currentThirdMenu = '';
+      this.currentThirdItem = '';
     },
     changeSubItem(url, idx) {
       this.currentThirdMenu = '';
       this.currentSubItem = idx;
-      // console.log(url);
-      this.pageUrl = `files/${url}`;
+      this.pageUrl = `${url}`;
     },
     openThirdMenu(menu, idx) {
       this.currentThirdMenu = menu;
@@ -28,8 +35,7 @@ var app = new Vue({
     },
     changeThirdItem(url, idx) {
       this.currentThirdItem = idx;
-      // console.log(url);
-      this.pageUrl = `files/${url}`;
+      this.pageUrl = `${url}`;
     },
   },
   mounted() {      
