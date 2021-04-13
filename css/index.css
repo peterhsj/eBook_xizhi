@@ -36,7 +36,7 @@ html, body {
       width: 20px;
     }
   .eBook__subMenu {
-    background: url("images/side_bg.gif") repeat-y;
+    background: url("../images/side_bg.gif") repeat-y;
     display: block;
     height: calc(100vh - 240px);
     overflow: hidden;

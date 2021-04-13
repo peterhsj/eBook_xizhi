@@ -21,7 +21,7 @@ var app = new Vue({
       }
       this.currentMainItem = idx;
       this.currentSubItem = '';
-      this.currentThirdMenu = '';
+      this.currentThirdMenugit = '';
       this.currentThirdItem = '';
     },
     changeSubItem(url, idx) {

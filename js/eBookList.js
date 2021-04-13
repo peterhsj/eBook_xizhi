@@ -4,7 +4,7 @@ const menuList = [
     subList: [
       {
         name: "服務人員專業度",
-        url: "files/eBook_1_1.pdf",
+        url: "eBook_1_1.html",
       },
       {
         name: "服務設施合宜程度",
