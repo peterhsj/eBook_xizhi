@@ -8,7 +8,7 @@ var app = new Vue({
       currentSubItem: '',
       currentThirdMenu: '',
       currentThirdItem: '',
-      pageUrl: 'welcome.html',
+      pageUrl: 'pages/welcome.html',
     }
   },
   methods: {
